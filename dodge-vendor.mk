@@ -1444,6 +1444,8 @@ PRODUCT_PACKAGES += \
     libswregistrationalgo \
     libtfestriping \
     libubifocus \
+    libui-stock \
+    libutils-stock \
     libvideoml \
     sensors.qsh \
     vendor.oplus.hardware.camera_rfi-V3-ndk \
