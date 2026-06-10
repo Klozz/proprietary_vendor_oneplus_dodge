@@ -8,6 +8,7 @@ soong_namespace {
         "hardware/qcom-caf/sm8750",
         "vendor/oneplus/sm8750-common",
         "vendor/qcom/opensource/commonsys-intf/display",
+        "device/oneplus/dodge",
     ],
 }
 
@@ -11769,6 +11770,7 @@ cc_prebuilt_library_shared {
                 "proprietary/odm/lib64/libAlgoProcess.so",
             ],
             shared_libs: [
+                "libapsfixup",
                 "android.hardware.graphics.mapper@4.0",
                 "android.hardware.graphics.common-V7-ndk",
                 "android.hardware.graphics.allocator-V2-ndk",
@@ -12055,6 +12057,37 @@ cc_prebuilt_library_shared {
                 "libnativewindow",
                 "liblog",
                 "libsharebuffer",
+                "libGLESv3",
+                "libEGL",
+                "libm",
+                "libdl",
+                "libc",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libEISLive",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/libEISLive.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libsharebuffer",
+                "libui",
+                "libutils",
+                "libnativewindow",
+                "libc++_shared",
                 "libGLESv3",
                 "libEGL",
                 "libm",

@@ -1487,6 +1487,7 @@ PRODUCT_PACKAGES += \
     libCaptureBokeh \
     libDocRectification \
     libEIS \
+    libEISLive \
     libFDClite \
     libFaceBeautyJni \
     libFaceBeautyPre \
