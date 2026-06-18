@@ -8,7 +8,7 @@ soong_namespace {
         "hardware/qcom-caf/sm8750",
         "vendor/oneplus/sm8750-common",
         "vendor/qcom/opensource/commonsys-intf/display",
-        "device/oneplus/dodge",
+	"device/oneplus/dodge",
     ],
 }
 
@@ -10813,6 +10813,59 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libdolbyeffect_4.1",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/product/lib64/libdolbyeffect_4.1.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libbinder_ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    product_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "liboplusdolbyeffect_4.1",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/product/lib64/liboplusdolbyeffect_4.1.so",
+            ],
+            shared_libs: [
+                "libdolbyeffect_4.1",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    product_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "com.qti.sensor.dodgefront",
     owner: "oneplus",
     strip: {
@@ -15061,6 +15114,31 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "liblog",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.dolby.dvs-V1-ndk",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/vendor.dolby.dvs-V1-ndk.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "libc++",
                 "libc",
                 "libm",
                 "libdl",
